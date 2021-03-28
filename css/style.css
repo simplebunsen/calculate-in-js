@@ -1,0 +1,13 @@
+.calculator-number-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.calculator-button{
+  border: solid;
+  background-color: grey;
+  align-self: stretch;
+  justify-self: stretch;
+  text-align: justify;
+}

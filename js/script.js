@@ -30,6 +30,17 @@ function operate(a,b,operant){
       break;
   
     default:
-      break;
+      //probably not best practice but should work
+      return Number.NaN;
   }
-}
+
+
+}  
+function setUpButtons(){
+    const container = document.querySelector(".calculator-number-container");
+    for (let i = 1; i <= 9; i++) {
+      const added = container.appendChild(document.createElement("div"));
+      added.innerText = i;
+      added.classList.add("calculator-button");
+    }
+  }
