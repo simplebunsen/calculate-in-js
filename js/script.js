@@ -50,7 +50,15 @@ function setUpButtons(){
   }
 
   function processNextKeypress(key) {
-    if(Number.isNaN(parseFloat(key))) { //when input cannot be parsed to a number
-      
+    //remove spaces (althought none should be present) and parse key either as Number, or as NaN!
+    const keyAsFloat = parseFloat(key);
+
+    if(Number.isNaN(keyAsFloat)) { //when input cannot be parsed to a number
+      const operatorRegex = new RegExp(" *(\+|\-|\*|\/) *");
+      if (key.match(operatorRegex) !== null) { //if key is an operator
+        operate(previousDisplayNumber, currentDisplayNumber, key.trim());
+      }
+    } else { //input is number
+      currentDisplayNumber = currentDisplayNumber * 10 + keyAsFloat;
     }
   }
