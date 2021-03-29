@@ -1,3 +1,7 @@
+let currentDisplayNumber = 0;
+let previousDisplayNumber = 0;
+let previousOperator = "";
+
 function add(a,b){
   return a + b;
 }
@@ -42,5 +46,11 @@ function setUpButtons(){
       const added = container.appendChild(document.createElement("div"));
       added.innerText = i;
       added.classList.add("calculator-button");
+    }
+  }
+
+  function processNextKeypress(key) {
+    if(Number.isNaN(parseFloat(key))) { //when input cannot be parsed to a number
+      
     }
   }
