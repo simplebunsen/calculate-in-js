@@ -1,6 +1,7 @@
 let currentDisplayNumber = 0;
 let previousDisplayNumber = 0;
 let previousOperator = "";
+let calcDisplayObject = document.querySelector("#calc-display-object");
 
 function add(a,b){
   return a + b;
@@ -65,4 +66,6 @@ function processNextKeypress(key) {
   } else { //input is number
     currentDisplayNumber = currentDisplayNumber * 10 + keyAsFloat;
   }
+  //update field
+  calcDisplayObject.value = currentDisplayNumber;
 }
