@@ -44,10 +44,13 @@ function setUpButtons(){
     const added = container.appendChild(document.createElement("div"));
     added.innerText = i;
     added.classList.add("calculator-button");
+    added.id = `btn-${i}`;
+    added.addEventListener("click", () => processNextKeypress(i));
   }
 }
 
 function processNextKeypress(key) {
+  alert(`processing key press of ${key}`);
   //remove spaces (althought none should be present) and parse key either as Number, or as NaN!
   const keyAsFloat = parseFloat(key);
 
