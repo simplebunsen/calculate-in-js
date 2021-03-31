@@ -2,7 +2,9 @@ const OPERATORS = ["+", "-", "*", "/", "="];
 let currentDisplayNumber = 0;
 let previousDisplayNumber = 0;
 let previousOperator = "";
-let calcDisplayObject = document.querySelector("#calc-display-object");
+const previousDisplayObject = document.querySelector("#previous-display-object");
+const operatorDisplayObject = document.querySelector("#operator-display-object");
+const calcDisplayObject = document.querySelector("#calc-display-object");
 
 function add(a,b){
   return a + b;
