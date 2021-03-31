@@ -69,7 +69,7 @@ function processNextKeypress(key) {
   const keyAsFloat = parseFloat(key);
 
   if(Number.isNaN(keyAsFloat)) { //when input cannot be parsed to a number
-    const operatorRegex = new RegExp(" *(\+|\-|\*|\/|\=) *");
+    const operatorRegex = / *(\+|\-|\*|\/|\=) *"/;
     if (key.match(operatorRegex) !== null) { //if key is an operator
       //previous Value is the result of current operation
       previousDisplayNumber = operate(previousDisplayNumber, currentDisplayNumber, previousOperator);
