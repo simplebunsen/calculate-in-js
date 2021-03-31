@@ -71,23 +71,27 @@ function processNextKeypress(key) {
   const keyAsFloat = parseFloat(key);
 
   if(Number.isNaN(keyAsFloat)) { //when input cannot be parsed to a number
-    const operatorRegex = / *(\+|\-|\*|\/|\=) *"/;
+    alert("input is NaN");
+    const operatorRegex = / *(\+|\-|\*|\/|\=) */;
     if (key.match(operatorRegex) !== null) { //if key is an operator
+      alert("input is operator");
       //previous Value is the result of current operation
       previousDisplayNumber = operate(previousDisplayNumber, currentDisplayNumber, previousOperator);
       currentDisplayNumber = 0;
       previousOperator = key.trim();
     }
   } else { //input is number
-    currentDisplayNumber = currentDisplayNumber * 10 + keyAsFloat;
+    currentDisplayNumber = currentDisplayNumber * 10 + keyAsFloat; 
   }
-  //update field
-  updateDisplay(currentDisplayNumber);
+  updateDisplay();   
 }
 
-function updateDisplay(desired) {
-  calcDisplayObject.value = desired;
+function updateDisplay() {
+  calcDisplayObject.value = currentDisplayNumber;
+  previousDisplayObject.value = previousDisplayNumber;
+  operatorDisplayObject.value = previousOperator;
 }
+
 
 function resetDisplay() {
   calcDisplayObject.value = 0;
