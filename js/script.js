@@ -67,5 +67,14 @@ function processNextKeypress(key) {
     currentDisplayNumber = currentDisplayNumber * 10 + keyAsFloat;
   }
   //update field
-  calcDisplayObject.value = currentDisplayNumber;
+  updateDisplay(currentDisplayNumber);
+}
+
+function updateDisplay(desired) {
+  calcDisplayObject.value = desired;
+}
+
+function resetDisplay() {
+  calcDisplayObject.value = 0;
+  currentDisplayNumber = 0;
 }
