@@ -1,3 +1,4 @@
+const OPERATORS = ["+", "-", "*", "/", "="];
 let currentDisplayNumber = 0;
 let previousDisplayNumber = 0;
 let previousOperator = "";
@@ -28,9 +29,10 @@ function operate(a,b,operator){
       return divide(a,b);
     case "=":
       return operate(a,b,previousOperator);
+    //fires when there isn't a previous operator yet (only one number has been entered yet)
     case "":
       return currentDisplayNumber;
-  
+    //in case something funky ends up being the operator
     default:
       //probably not best practice but should work
       return Number.NaN;
@@ -40,13 +42,24 @@ function operate(a,b,operator){
 }  
 function setUpButtons(){
   const container = document.querySelector(".calculator-number-container");
+
+  //setting up numpad
   for (let i = 1; i <= 9; i++) {
-    //create new div and add it
+    addButton(i);
+  }
+
+  //crudely setting up operators
+  for (let i = 0; i < OPERATORS.length; i++) {
+    const current = OPERATORS[i];
+    addButton(current);    
+  }
+
+  function addButton(desired) {
     const added = container.appendChild(document.createElement("div"));
-    added.innerText = i;
+    added.innerText = desired;
     added.classList.add("calculator-button");
-    added.id = `btn-${i}`;
-    added.addEventListener("click", () => processNextKeypress(i));
+    added.id = `btn-${desired}`;
+    added.addEventListener("click", () => processNextKeypress(desired));
   }
 }
 
