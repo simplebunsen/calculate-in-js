@@ -81,13 +81,11 @@ function processNextKeypress(key) {
 
       alert("input is operator");
 
-      if(previousOperator === "=") {
-        previousOperator = "";
+      //don't operate if the previous operator was "="
+      if(previousOperator !== "=") {     
+        previousDisplayNumber = operate(previousDisplayNumber, currentDisplayNumber, previousOperator);
       }
-
-      //previous Value is the result of current operation
-      previousDisplayNumber = operate(previousDisplayNumber, currentDisplayNumber, previousOperator);
-      currentDisplayNumber = 0;
+      currentDisplayNumber = "";
       previousOperator = key.trim();
     }
 
