@@ -75,13 +75,22 @@ function processNextKeypress(key) {
     const operatorRegex = / *(\+|\-|\*|\/|\=) */;
     if (key.match(operatorRegex) !== null) { //if key is an operator
       alert("input is operator");
+      if(previousOperator === "=") {
+        previousOperator = "";
+      }
       //previous Value is the result of current operation
       previousDisplayNumber = operate(previousDisplayNumber, currentDisplayNumber, previousOperator);
       currentDisplayNumber = 0;
       previousOperator = key.trim();
     }
   } else { //input is number
-    currentDisplayNumber = currentDisplayNumber * 10 + keyAsFloat; 
+    if(previousOperator === "=") {
+      currentDisplayNumber = keyAsFloat;
+      previousDisplayNumber = "";
+      previousOperator = "";
+    } else {
+      currentDisplayNumber = currentDisplayNumber * 10 + keyAsFloat; 
+    }
   }
   updateDisplay();   
 }
