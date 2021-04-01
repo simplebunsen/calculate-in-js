@@ -85,7 +85,7 @@ function processNextKeypress(key) {
       if(previousOperator !== "=") {     
         previousDisplayNumber = operate(previousDisplayNumber, currentDisplayNumber, previousOperator);
       }
-      currentDisplayNumber = "";
+      currentDisplayNumber = 0;
       previousOperator = key.trim();
     }
 
@@ -93,7 +93,7 @@ function processNextKeypress(key) {
     
     if(previousOperator === "=") {
       currentDisplayNumber = keyAsFloat;
-      previousDisplayNumber = "";
+      previousDisplayNumber = 0;
       previousOperator = "";
     } else {
       currentDisplayNumber = currentDisplayNumber * 10 + keyAsFloat; 
@@ -103,7 +103,7 @@ function processNextKeypress(key) {
 }
 
 function updateDisplay() {
-  calcDisplayObject.value = currentDisplayNumber;
-  previousDisplayObject.value = previousDisplayNumber;
+  calcDisplayObject.value = parseFloat(currentDisplayNumber.toFixed(5));
+  previousDisplayObject.value = parseFloat(previousDisplayNumber.toFixed(5));
   operatorDisplayObject.value = previousOperator;
 }
