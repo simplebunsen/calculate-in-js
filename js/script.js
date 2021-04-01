@@ -66,24 +66,33 @@ function setUpButtons(){
 }
 
 function processNextKeypress(key) {
+
   alert(`processing key press of ${key}`);
+
   //remove spaces (althought none should be present) and parse key either as Number, or as NaN!
   const keyAsFloat = parseFloat(key);
 
   if(Number.isNaN(keyAsFloat)) { //when input cannot be parsed to a number
     alert("input is NaN");
+
     const operatorRegex = / *(\+|\-|\*|\/|\=) */;
+
     if (key.match(operatorRegex) !== null) { //if key is an operator
+
       alert("input is operator");
+
       if(previousOperator === "=") {
         previousOperator = "";
       }
+
       //previous Value is the result of current operation
       previousDisplayNumber = operate(previousDisplayNumber, currentDisplayNumber, previousOperator);
       currentDisplayNumber = 0;
       previousOperator = key.trim();
     }
+
   } else { //input is number
+    
     if(previousOperator === "=") {
       currentDisplayNumber = keyAsFloat;
       previousDisplayNumber = "";
@@ -99,10 +108,4 @@ function updateDisplay() {
   calcDisplayObject.value = currentDisplayNumber;
   previousDisplayObject.value = previousDisplayNumber;
   operatorDisplayObject.value = previousOperator;
-}
-
-
-function resetDisplay() {
-  calcDisplayObject.value = 0;
-  currentDisplayNumber = 0;
 }
