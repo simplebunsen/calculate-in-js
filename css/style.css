@@ -3,11 +3,28 @@ body{
   background-size: cover;
 }
 
+.notebook-img{
+  position:absolute;
+  width: 50vw;
+}
+
+
+.calculator-display-container{
+  position: absolute;
+}
 
 .calculator-number-container{
+  position: absolute;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+.notebook-wrapper{
+  position: relative;
+  width: 50vw;
+  height: 50vw;
+  margin: auto;
 }
 
 .calculator-button{
