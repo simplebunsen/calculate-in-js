@@ -16,6 +16,11 @@ function multiply(a,b){
   return a * b;
 }
 function divide(a,b){
+  if (b == 0) {
+    alert("dumb dumb tried to divide by zero. gootta clear the screen for that :(")
+    clearCalculator();
+    return 0;
+  }
   return a / b;
 }
 
@@ -106,4 +111,10 @@ function updateDisplay() {
   calcDisplayObject.value = parseFloat(currentDisplayNumber.toFixed(5));
   previousDisplayObject.value = parseFloat(previousDisplayNumber.toFixed(5));
   operatorDisplayObject.value = previousOperator;
+}
+
+function clearCalculator() {
+  //numbners = 0
+  updateDisplay();
+  alert("cleared");
 }
