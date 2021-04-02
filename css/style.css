@@ -1,3 +1,9 @@
+body{
+  background-image: url("../images/background-fhd.jpg");
+  background-size: cover;
+}
+
+
 .calculator-number-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
