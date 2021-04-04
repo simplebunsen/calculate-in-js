@@ -62,7 +62,7 @@ function setUpButtons(){
   }
 
   function addButton(desired) {
-    const added = container.appendChild(document.createElement("div"));
+    const added = container.appendChild(document.createElement("a"));
     added.innerText = desired;
     added.classList.add("calculator-button");
     added.id = `btn-${desired}`;
