@@ -28,12 +28,21 @@ body{
   width: 50vw;
   height: 50vw;
   margin: auto;
+} 
+
+.notebook-wrapper {
+  @media (orientation: portrait) {
+    width: 80vw;
+    height: 80vw; 
+    color: green;
+  }
 }
+
 
 .calculator-button{
   border: solid;
-  background-color: grey;
+  background-color: transparent;
+  text-align: center;
   align-self: stretch;
   justify-self: stretch;
-  text-align: justify;
 }
