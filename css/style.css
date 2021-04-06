@@ -18,7 +18,7 @@ body{
 .calculator-number-container{
   font-family: 'Nanum Brush Script', cursive;
   font-size: 5vw;
-  width: 70%;
+  width: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -40,6 +40,7 @@ body{
 
 
 .calculator-button{
+  height: 10vh;
   background: rgba( 255, 255, 255, 0.30 );
   box-shadow: 0 8px 32px 0 rgba(217, 218, 238, 0.37);
   backdrop-filter: blur( 5.0px );
