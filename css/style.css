@@ -3,12 +3,9 @@ body{
   background-size: cover;
 }
 
-.notebook-img{
-  position:absolute;
-  width: 50vw;
-  z-index: -1;
+h1{
+  margin: 0;
 }
-
 
 .calculator-display-container{
   padding: 24px;
@@ -24,7 +21,7 @@ body{
 
 .calculator-number-container{
   font-family: 'Nanum Brush Script', cursive;
-  font-size: 5vw;
+  font-size: 5em;
   width: 100%;
   margin: auto;
   display: grid;
@@ -41,7 +38,6 @@ body{
 @media (orientation: portrait) {
   .notebook-wrapper {
     width: 95vw;
-    color: green;
   }
 }
 
@@ -60,9 +56,15 @@ body{
   margin: 2px;
 }
 
+.calculator-button:hover{
+  transform: scale(0.95);
+  box-shadow: 0 8px 32px 0 rgba(118, 217, 235, 0.37);
+}
+
 
 .num-container{
-  width: auto;
+  width: 100%;
+  text-align: right;
   font-size: 4em;
   border: 0;
   background: transparent;
