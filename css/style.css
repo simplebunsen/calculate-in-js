@@ -11,6 +11,13 @@ body{
 
 
 .calculator-display-container{
+  padding: 24px;
+  background: rgba( 255, 255, 255, 0.30 );
+  box-shadow: 0 8px 32px 0 rgba(217, 218, 238, 0.37);
+  backdrop-filter: blur( 5.0px );
+  -webkit-backdrop-filter: blur( 10.0px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   justify-self: center;
   margin: auto;
 }
@@ -51,4 +58,12 @@ body{
   align-self: stretch;
   justify-self: stretch;
   margin: 2px;
+}
+
+
+.num-container{
+  width: auto;
+  font-size: 4em;
+  border: 0;
+  background: transparent;
 }
