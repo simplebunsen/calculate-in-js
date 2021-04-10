@@ -72,19 +72,19 @@ function setUpButtons(){
 
 function processNextKeypress(key) {
 
-  alert(`processing key press of ${key}`);
+  //alert(`processing key press of ${key}`);
 
   //remove spaces (althought none should be present) and parse key either as Number, or as NaN!
   const keyAsFloat = parseFloat(key);
 
   if(Number.isNaN(keyAsFloat)) { //when input cannot be parsed to a number
-    alert("input is NaN");
+    //alert("input is NaN");
 
     const operatorRegex = / *(\+|\-|\*|\/|\=) */;
 
     if (key.match(operatorRegex) !== null) { //if key is an operator
 
-      alert("input is operator");
+      //alert("input is operator");
 
       //don't operate if the previous operator was "="
       if(previousOperator !== "=") {     
@@ -116,5 +116,5 @@ function updateDisplay() {
 function clearCalculator() {
   //numbners = 0
   updateDisplay();
-  alert("cleared");
+  //alert("cleared");
 }
