@@ -55,6 +55,9 @@ function setUpButtons(){
     addButton(i);
   }
 
+  //cuz we also need a zero but only after the main numbers
+  addButton(0);
+
   //crudely setting up operators
   for (let i = 0; i < OPERATORS.length; i++) {
     const current = OPERATORS[i];
