@@ -1,4 +1,4 @@
-const OPERATORS = ["+", "-", "*", "/", "="];
+const OPERATORS = ["+", "-", "x", "÷", "="];
 let currentDisplayNumber = 0;
 let previousDisplayNumber = 0;
 let previousOperator = "";
@@ -30,9 +30,9 @@ function operate(a,b,operator){
       return add(a,b);
     case "-":
       return subtract(a,b);
-    case "*":
+    case "x":
       return multiply(a,b);
-    case "/":
+    case "÷":
       return divide(a,b);
     case "=":
       return operate(a,b,previousOperator);
@@ -80,7 +80,7 @@ function processNextKeypress(key) {
   if(Number.isNaN(keyAsFloat)) { //when input cannot be parsed to a number
     //alert("input is NaN");
 
-    const operatorRegex = / *(\+|\-|\*|\/|\=) */;
+    const operatorRegex = / *(\+|\-|\x|\÷|\=) */;
 
     if (key.match(operatorRegex) !== null) { //if key is an operator
 
