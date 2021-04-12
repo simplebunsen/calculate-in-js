@@ -108,14 +108,14 @@ function processNextKeypress(key) {
 }
 
 function updateDisplay() {
+  previousDisplayObject.value = parseFloat(previousDisplayNumber.toFixed(5));
   if(previousOperator === "=" && currentDisplayNumber == 0) {
     alert("we have equal sign and 0 current number");
-    calcDisplayObject = "";
-    previousOperator = "";
+    calcDisplayObject.value = "";
+    operatorDisplayObject.value = "";
     return;
   }
   calcDisplayObject.value = parseFloat(currentDisplayNumber.toFixed(5));
-  previousDisplayObject.value = parseFloat(previousDisplayNumber.toFixed(5));
   operatorDisplayObject.value = previousOperator;
 }
 
